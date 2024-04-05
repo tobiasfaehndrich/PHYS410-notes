@@ -1,0 +1,32 @@
+\ProvidesPackage{commands}
+
+\usepackage[sc]{mathpazo}
+\usepackage{amsmath} % AMS Math Package
+\usepackage{amsthm} % Theorem Formatting
+\usepackage{amssymb}    % Math symbols such as \mathbb
+\usepackage{graphicx} % Allows for eps images
+\usepackage[dvips,letterpaper,margin=1in,bottom=0.7in]{geometry}
+\usepackage{commath}
+\usepackage{tensor}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage[breakable]{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{siunitx}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+
+\newtcolorbox{defbox}[1]{colback=red!5!, colframe=red!75!black,fonttitle=\bfseries, title=Definition#1}
+\newtcolorbox{blankbox}[1]{colback=blue!5, colframe=blue!55!black, fonttitle=\bfseries, title=#1}
+\newtcolorbox{thmbox}[1]{colback=blue!5, colframe=blue!55!black, fonttitle=\bfseries, title=Theorem#1}
+\newtcolorbox{lembox}[1]{colback=blue!5, colframe=blue!55!black, fonttitle=\bfseries, title=Lemma#1}
+\newtcolorbox{corbox}[1]{colback=blue!5, colframe=blue!55!black, fonttitle=\bfseries, title=Corollary#1}
+\newtcolorbox{propbox}[1]{colback=blue!5, colframe=blue!55!black, fonttitle=\bfseries, title=Proposition#1}
+\newtcolorbox{axiombox}[1]{colback=green!5, colframe=green!35!black, fonttitle=\bfseries, title=Axiom#1}
