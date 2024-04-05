@@ -1,0 +1,80 @@
+\def \secname {Floating Point Arithmetic and Stability}
+
+\section[\secname]{\hyperlink{toc}{\secname}}
+
+\textbf{1. Floating Point Arithmetic}
+
+1.1 Some Definitions
+\begin{itemize}
+    \item To start
+    \[ a = \text{some exact (reference) value}\]
+
+    \[\hat{a} = \text{some approx of a (floating point of a)}  \]
+
+    \item Absolute Error (error)
+    \[ e_{ABS} = a - \hat{a} \text{ or }\hat{a}-a \text{, doesn't matter}\]
+    \item Relative Error 
+    \[e_{REL} = \frac{a-\hat{a}}{|a|} \text{ For } a \neq 0 \]
+
+    \item Note this difference is important for HW1
+\end{itemize}
+
+
+
+1.2 IEEE 64-bit floating point arithmetic
+\begin{itemize}
+    \item 53 bits mantissa, II bits exponents, base-2 representation sign-bits for both mantissa / exponents.
+
+    \item numbers in the range around $2\times 10^{-300}$ to $1\times 10^{+300}$ with approx 16 decimal digits precision.
+
+    \item $\frac{1}{f_{min}} < f_{MAX} $ So we don't have overflow with respect to reciprocal
+    \item Special (exceptional) values:
+    \begin{itemize}
+        \item infinity (ex 1.0/0.0)
+        \item nan (not a number) (ex. 0.0/0.0)
+        \begin{itemize}
+            \item nan is contagious -- nan (* / + -) makes anything equal nan
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+1.3 Machine Precision / Machine $\epsilon$
+
+\begin{itemize}
+    \item Smallest $\epsilon > 0$ such that
+    \[1+\epsilon \neq 1 \qquad \epsilon \approx 10^{-8}\]
+    In the floating point model.
+\end{itemize}
+
+
+1.4 Round Off error: Catastrophic loss of precision
+
+\begin{itemize}
+    \item Multiplies/divides: relatively benign, relative error grow like $\sqrt{n}$ where n is the number of operations
+    \item addition/subtraction: serious problem when subtracting x/y with $x\approx y$
+    \item for example 3.6326-3.6325=0.0001
+    \item \[\frac{f(x+h)-f(x)}{h}\] as h approaches 0
+    \item plot ln(abs error) vs |ln(h)| and we see when h is not 0 there is a catastrophic loss of precision.
+\end{itemize}
+
+1.5 Stability / Numerical Stability
+\begin{itemize}
+    \item Consider some process / algorithm
+    \[u(x) \rightarrow y\]
+    where x is the continuum variables
+    \item Floating point representation
+    \[\hat{u}(\hat{x}) \rightarrow \hat{y}\]
+    m,n component vectors
+
+    \item Heuristic (non-rigorous) definition of stability:
+
+    \item \textbf{Continuum}: If $|{x-x'}|$ is small, then so is $||u(x)-u(x')||$
+
+    \item \textbf{Floating Point}: If $||\hat{x}\hat{x}'||$ is small, then so is $||\hat{u}(\hat{x}')-\hat{u}(\hat{x}||$
+
+    \item Unfortunate fact: stable condition process does not imply stable floating point one.
+
+    \item $\hat{u}$ not stable $\rightarrow$ Floating point finite precision will cause eros to rapidly accumulate, numerical process useless
+
+    \item numerical unstable -- ill-conditioned
+\end{itemize}

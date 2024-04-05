@@ -1,0 +1,62 @@
+\def \secname {Programming Basics}
+
+\section[\secname]{\hyperlink{toc}{\secname}}
+
+
+\textbf{Relational and Logical Operators:}
+
+\begin{itemize}
+    \item Matlab follows C approach
+    \item 0 for false and 1 for true (for evaluating expressions)
+    \item Relational: tilda equal (not equal), and then normal ones like >, <, etc...
+    \item Logical: and symbol, | or symbol, tilda is not, and then double and symbol is short circuit, and double | is short circuit OR
+\end{itemize}
+
+\textbf{Control Structures}
+
+Selection/Conditional:
+\begin{itemize}
+    \item  if-elseif-else-end statements
+    \item no colons 
+    \item end conditional with end
+\end{itemize}
+
+Iteration (repetition, and loops)
+
+FOR
+\begin{itemize}
+    \item for <var> = <first> : <step> : <last> do something and then end
+    \item without step, auto is step = 1
+    \item can also give vector to iterate through or linspace
+    \item again need to end
+\end{itemize}
+
+WHILE
+\begin{itemize}
+    \item While the expression is true keep evaluating code block and then end when it is False
+    \item can use break to get out of the innermost loop, if it is in the general code block, it will stop the running of the script
+\end{itemize}
+
+CONTINUE
+\begin{itemize}
+    \item used within a loop to short circuit the execution of the loop body and proceed to the next iteration
+\end{itemize}
+
+RETURN
+\begin{itemize}
+    \item causes an immediate return of a script or function to the invoking environment
+\end{itemize}
+
+
+
+\textbf{Programming Units: Scripts and Functions}
+\begin{itemize}
+    \item in linux command you can call a script or a function script with the .m extension
+    \item arb num of inputs and outputs
+    \item function name(args...) for 0 output
+    \item function output = name(args...) for 1 outputs
+    \item function [out1, out2 .... outn] = name(in1, in2, ... inm) for n and m outputs and inputs
+    \item Ideally name of function is the same as the name of the script
+    
+\end{itemize}
+
